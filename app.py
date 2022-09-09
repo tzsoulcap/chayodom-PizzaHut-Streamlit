@@ -2,13 +2,12 @@ import pandas as pd
 import streamlit as st
 
 
-st.title("CHAYODOM HEHA")
+st.title("TZSOULCAP")
 st.header("This is Pizza Hut locations in US")
 
-data = pd.read_csv("C:\chayodom-PizzaHut-Streamlit\pizza_hut_locations.csv")
+data = pd.read_csv("pizza_hut_locations.csv")
 locations = data[['latitude', 'longitude']]
-# locations['latitude'] = pd.to_numeric(locations['latitude'])
-# locations['longitude'] = pd.to_numeric(locations['longitude'])
+
 print(data.dtypes)
 locations.rename({'longitude':'lon'}, axis='columns', inplace=True)
 locations.rename({'latitude':'lat'}, axis='columns', inplace=True)
