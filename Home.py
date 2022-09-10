@@ -7,7 +7,7 @@ st.header("This is Pizza Hut locations in US")
 
 
 
-data = pd.read_csv("pizza_hut_locations.csv")
+data = pd.read_csv("https://raw.githubusercontent.com/tzsoulcap/chayodom-PizzaHut-Streamlit/master/pizza_hut_locations.csv")
 data = data.dropna(how='any', subset=['latitude', 'longitude'])
 data.rename({'latitude':'lat'}, axis='columns', inplace=True)
 data.rename({'longitude':'lon'}, axis='columns', inplace=True)
@@ -44,4 +44,4 @@ st.sidebar.table(types.loc[:, 'types'])
 # x = pd.DataFrame(locate, columns=['lat', 'lon'])
 
 st.map(locations)
-# st.write(data)
+st.dataframe(data)
